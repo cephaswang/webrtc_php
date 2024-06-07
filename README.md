@@ -2,6 +2,7 @@ https://www.youtube.com/watch?v=wXreh1fsHAo
 Introduction - 1 of 34 - Build a live video chat Using WebRTC, PHP, JS
 
 Ratchet websocket SSL connect?
+
 https://github.com/ratchetphp/Ratchet/issues/100
 
 Thank you very much, @simillo01, your solution worked for me, altough I needed some more settings. Thanks as well to all who have contributed before. Here es my complete code:
