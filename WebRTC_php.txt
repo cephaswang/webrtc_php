@@ -9,3 +9,151 @@ https://github.com/cephaswang/webrtc_php/blob/main/vchat_20240607.tgz
 
 https://www.youtube.com/watch?v=IG9X0aHN0Ak
 10 分钟 理论 + 实操 搞懂 WebSocket
+
+
+
+
+
+
+Ratchet websocket SSL connect?
+https://github.com/ratchetphp/Ratchet/issues/100
+Thank you very much, @simillo01, your solution worked for me, altough I needed some more settings. Thanks as well to all who have contributed before. Here es my complete code:
+
+https://www.youtube.com/watch?v=lP9kL-hJ27M
+How To Enable Apache Mod_rewrite in Ubuntu 20.04 LTS
+
+https://www.youtube.com/watch?v=xGKOPaS1_pQ
+How To install Apache And Configure Proxy Feature On Ubuntu 20.04
+
+sudo apt install nginx -y
+sudo systemctl reload nginx
+sudo systemctl restart apache2
+hostname -I; hostname
+sudo a2enmod rewrite headers proxy proxy_http
+sudo systemctl start apache2
+
+apachectl configtest
+systemctl status apache2.service
+
+
+sudo nano /etc/apache2/sites-available/default-ssl.conf
+
+
+https://www.youtube.com/watch?v=-H5ZP3jvmrw
+A Complete Guide to Apache 2.4.x HTTP/HTTPS Reverse Proxy
+
+sudo apt-get update
+sudo apt-get install apache2 -y
+sudo nano /var/www/html/p1.html
+sudo apt-get install curl
+curl http://127.0.0.1/p1.html
+ip a
+inet 192.168.106.128/24
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+
+
+https://stackoverflow.com/questions/38838567/proxy-websocket-wss-to-ws-apache
+
+RewriteEngine on
+ProxyRequests Off
+ProxyPreserveHost on
+
+
+https://www.youtube.com/watch?v=IG9X0aHN0Ak
+10 分钟 理论 + 实操 搞懂 WebSocket
+
+
+Websockets  ssl
+
+
+
+               <Directory /var/www/html/vchat/>
+	                Options Indexes FollowSymLinks MultiViews
+	                AllowOverride All
+	                Require all granted
+	                allow from all
+
+	                RewriteEngine On
+	                RewriteCond %{REQUSET_FILENAME} !-f
+	                RewriteCond %{REQUSET_FILENAME} !-d
+	                RewriteRule ^([a-zA-Z0-9]+)/?$ connect.php?username=$1
+	        </Directory>
+
+            ProxyPass /wss/ ws://127.0.0.1:8080/
+
+
+sudo apt-get --purge remove apache2
+sudo apt install apache2
+
+sudo apt-get --purge remove php libapache2-mod-php php-mysql
+sudo apt install php libapache2-mod-php php-mysql
+
+sudo apt-get --purge remove php-cli
+sudo apt install php-cli
+
+
+sudo apt-get --purge remove phpmyadmin
+
+
+sudo apt-get --purge remove libapache2-mod-php
+sudo apt install libapache2-mod-php
+sudo apt install -y libapache2-mod-php
+
+
+ServerName 192.168.106.128
+
+
+https://www.rosehosting.com/blog/how-to-enable-https-protocol-with-apache-2-on-ubuntu-20-04/
+How To Enable HTTPS Protocol with Apache 2 on Ubuntu 20.04 
+
+sudo a2enmod ssl
+
+
+https://www.hostinger.com/tutorials/how-to-install-and-setup-phpmyadmin-on-ubuntu
+How to Install phpMyAdmin on Ubuntu
+sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl -y
+
+
+https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu#step-3-installing-php
+How To Install Linux, Apache, MySQL, PHP (LAMP) Stack on Ubuntu
+
+sudo apt-get --purge remove php libapache2-mod-php php-mysql
+sudo apt-get --purge remove php-cli
+
+
+sudo apt-get --purge remove libapache2-mod-php
+sudo apt install libapache2-mod-php
+
+sudo apt install apache2
+sudo apt install mysql-server
+sudo apt install php libapache2-mod-php php-mysql
+sudo apt install php-cli
+
+sudo apt-get purge --auto-remove php libapache2-mod-php php-mysql
+sudo apt-get purge --auto-remove php-cli
+sudo apt-get purge --auto-remove apache2
+
+https://www.youtube.com/watch?v=NjQsozxW5Ow
+How to Install Apache, PHP, MySql & PhpMyAdmin on Ubuntu Linux | Install & Configure LAMP on Ubuntu 
+
+sudo apt-get purge --auto-remove apache2
+sudo apt install apache2 -y
+sudo apt-get purge --auto-remove libapache2-mod-php
+sudo apt install libapache2-mod-php -y
+
+sudo systemctl restart apache2
+sudo systemctl stop apache2
+
+
+sudo service apache2 restart
+
+
+https://serverfault.com/questions/157788/could-not-bind-to-address-0-0-0-080-apache-error
+"could not bind to address 0.0.0.0:80 " -- Apache Error
+sudo netstat -anp | grep :80
+
+
+https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu
+How To Install Linux, Apache, MySQL, PHP (LAMP) Stack on Ubuntu
+
