@@ -1,3 +1,6 @@
+需要修改為https訪問，才能支持錄音。
+https://drive.google.com/file/d/1JvrRgymDvO4UkFh0bJkLeIufckhKEM8E/view?usp=drive_link
+
 /opt/lampp/etc/extra/httpd-ssl.conf
 ProxyPass /wss/ ws://127.0.0.1:8080/
 
