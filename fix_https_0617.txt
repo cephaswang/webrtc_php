@@ -1,0 +1,16 @@
+/opt/lampp/etc/extra/httpd-ssl.conf
+ProxyPass /wss/ ws://127.0.0.1:8080/
+
+init.php
+define("BASE_URL", "https://".$_SERVER['HTTP_HOST']."/fb-messenger/");
+
+home.php
+const conn    = new WebSocket(`wss://<?php echo $_SERVER['HTTP_HOST'];?>/wss/?token=<?php echo $userObj->sessionID;?>`);
+
+messenger.php
+const conn    = new WebSocket(`wss://<?php echo $_SERVER['HTTP_HOST'];?>/wss/?token=<?php echo $userObj->sessionID;?>`);
+
+原有的源碼，錄音無法工作，
+這個可以正常錄音。
+https://davidgrcias.github.io/VoiceRecorderJavaScript/
+
